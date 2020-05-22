@@ -1,0 +1,103 @@
+body{
+	background: #7677b8;
+}
+.box{
+	height: 580px;
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	text-align: center;
+	display: none;
+	padding-top: 30px;
+}
+.start{
+	height: 480px;
+	width: 840px;
+	background-image: url(start.jpg);
+	background-size: 100% 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.btn{
+	font-family: Arial;
+	color: white;
+	font-weight: bold;
+	background: #10113b;
+	border-radius: 30px;
+	height: 50px;
+	width: 180px;
+	margin-top: 15px;
+}
+.img{
+	height: 120px;
+	width: 120px;
+	border-radius: 50%;
+	margin-left: 40px;
+	transition: 2s;
+}
+.img2{
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	margin-top: 10px;
+	transition: 2s;
+}
+.tm{
+	font-size: 60px;
+}
+.info{
+	display: flex; 
+	margin-top: 50px; 
+	margin-left: auto; 
+	margin-right: auto;
+}
+.doska{
+	width: 100px;
+	position: absolute;
+	top: 20px;
+	left: 1250px;
+	display: none;
+	text-align: center;
+	border: solid #404170;
+	border-radius: 20px;
+	padding-bottom: 10px;
+}
+.win{
+	width: 650px;
+	height: 250px;
+	margin-left: auto; 
+	margin-right: auto;
+	margin-top: 100px;
+	padding-top: 200px;
+	background-image: url(win.jpg);
+	background-size: 100% 100%;
+	display: none;
+}
+.lose{
+	width: 650px;
+	height: 180px;
+	margin-left: auto; 
+	margin-right: auto;
+	margin-top: 100px;
+	padding-top: 300px;
+	background-image: url(lose.jpg);
+	background-size: 100% 100%;
+	display: none;
+}
+.txt{
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 60px;
+	text-align: center;;
+	color: #322699;
+}
+.txtochki{
+	font-family: Arial;
+	font-weight: bold;
+	text-align: center;;
+	color: #322699;
+}
+.imglose{
+	height: 450px;
+}

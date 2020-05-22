@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<!--Первая страница-->
+	<div class="box">
+		<div class="start"></div>
+		<button class="btn">START</button>
+	</div>
+	
+	<!--Вторая страница-->
+	<div class="box">
+		<h1 style="font-size: 40px;">Найди всех этих прекрасных девушек за 7 секунд</h1>
+		<div class="info">
+			<img src="ev1.jpg" class="img">
+			<img src="ev2.jpg" class="img">
+			<img src="ev3.jpg" class="img">
+			<img src="ev4.jpg" class="img">
+			<img src="ev5.jpg" class="img">
+			<img src="ev6.jpg" class="img">
+		</div>
+		<h1 style="margin-top: 70px;">Игра начнется через</h1>
+		<h1 class="tm"></h1>
+	</div>
+
+
+	<!--Третья страница-->
+	<div class="box"> 
+		<img src="1.jpg" class="img" style="position: absolute; top: 280px; left: 484px;">
+		<img src="2.jpg" class="img" style="position: absolute; top: 481px; left: 854px;">
+		<img src="3.jpg" class="img" style="position: absolute; top: 25px; left: 148px;">
+		<img src="4.jpg" class="img" style="position: absolute; top: 254px; left: 52px;">
+		<img src="5.jpg" class="img" style="position: absolute; top: 96px; left: 456px;">
+		<img src="6.jpg" class="img" style="position: absolute; top: 305px; left: 1000px;">
+		<img src="7.jpg" class="img" style="position: absolute; top: 458px; left: 97px;">
+		<img src="8.jpg" class="img" style="position: absolute; top: 412px; left: 654px;">
+		<img src="9.jpg" class="img" style="position: absolute; top: 420px; left: 354px;">
+
+		<img src="ev1.jpg" class="img yes" style="position: absolute; top: 69px; left: 954px;">
+		<img src="ev2.jpg" class="img yes" style="position: absolute; top: 281px; left: 754px;">
+		<img src="ev3.jpg" class="img yes" style="position: absolute; top: 185px; left: 208px;">
+		<img src="ev4.jpg" class="img yes" style="position: absolute; top: 94px; left: 752px;">
+		<img src="ev5.jpg" class="img yes" style="position: absolute; top: 496px; left: 496px;">
+		<img src="ev6.jpg" class="img yes" style="position: absolute; top: 485px; left: 1078px;">
+	</div>
+	<div class="doska">
+		<h3>Остались:</h3>
+		<img src="ev1.jpg" class="img2 yeah">
+		<img src="ev2.jpg" class="img2 yeah">
+		<img src="ev3.jpg" class="img2 yeah">
+		<img src="ev4.jpg" class="img2 yeah">
+		<img src="ev5.jpg" class="img2 yeah">
+		<img src="ev6.jpg" class="img2 yeah">
+	</div>
+
+	<!--Последняя страница-->
+	<div class="win">
+		<h1 class="txt">ПОБЕДА, BITCH!!!</h1>
+	</div>
+
+	<div class="lose">
+		<h1 class="txt">Ты проиграл((((</h1>
+		<h3 class="txtochki">Ты набрал <span class="ochki"></span></h3>
+	</div>
+
+
+	<script type="text/javascript">
+		let boxes = document.querySelectorAll(".box");
+		let doska = document.querySelector(".doska");
+
+		let yes = document.querySelectorAll(".yes");
+		let yeah = document.querySelectorAll(".yeah");
+		let img = document.querySelectorAll(".img");
+
+		let chet = 7;
+		let j = 0;
+		let score = 0;
+		let tm = document.querySelector(".tm");
+		tm.innerHTML = chet;
+		boxes[0].style.display = "block";
+
+		document.querySelector(".btn").onclick = function(){
+			boxes[0].style.display = 'none';
+			boxes[1].style.display = 'block';
+			setInterval(time,1000);
+			setTimeout(started, 7000);
+			setTimeout(hide, 15000);
+		}
+
+		let time = function(){
+			chet = chet - 1;
+			tm.innerHTML = chet;
+		}
+
+		let started = function(){
+			boxes[1].style.display = 'none';
+			boxes[2].style.display = 'block';
+			doska.style.display = 'block';
+		}
+		
+		for (let i = 0; i < yes.length; i++) {
+			yes[i].onclick = function(){
+				score = score + 1;
+				j = i + 1;
+				yeah[i].src = "ex" + j + ".jpg";
+				yes[i].style.display = 'none';
+			}
+		}
+
+		let hide = function(){
+			boxes[2].style.display = 'none';
+			doska.style.display = 'none';
+			if (score == 6) {
+				document.querySelector(".win").style.display = 'block';
+				
+			}
+			if (score < 6) {
+				document.querySelector(".lose").style.display = 'block';
+				document.querySelector(".ochki").innerHTML = score;
+			}
+		}
+	</script>
+</body>
+</html>
